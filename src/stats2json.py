@@ -1,11 +1,18 @@
-import re
+# testURL = /home/ealvarado/Documents/tec/ce4301-arquitectura-computadores/proyecto-03/test/stats.txt
+import re, json, os
+from datetime import datetime as dt
 
-HEADER_REGEX = '^-+\s[a-zA-Z]\s[a-zA-Z]\s[a-zA-Z]\s+-+$'
+HEADER_REGEX = r'^-+\s[a-zA-Z]\s[a-zA-Z]\s[a-zA-Z]\s+-+$'
+FLOAT_REGEX = r'^-?\d+(?:\.\d+)$'
 SEPARATOR = ' '
+INFINITY = 'inf'
+NAN = 'nan'
 
 def stats2json(file_URL):
     tokens = read_file(file_URL)
-    print(tokens)
+    stats_dict = make_dict(tokens)
+    save_json_file(stats_dict)
+
 
 # Lee las lineas una por una, las estandariza y las retorna
 def read_file(file_URL: str) -> list:
@@ -37,11 +44,29 @@ def remove_comment(line: list) -> str:
     return ','.join(line)
 
 
+# crea un diccionario con los valores leidos
 def make_dict(lines: list) -> dict:
-    pass
+    stats_dict = {}
 
-def save_json_file(json: dict) -> None:
-    pass
+    for line in lines:
+        tokens = line.split(',')
+        name = tokens[0]
+        value = tokens[1]
+        if value != NAN and value != INFINITY:
+            value = float(value)
+    
+        stats_dict[name] = value
+
+    return stats_dict
+
+
+# Guarda el resultado en un archivo
+def save_json_file(stats: dict) -> None:
+    os.chdir('./out')
+    new_file = f'stats_{dt.now().time()}.json'
+    with open(new_file, mode='w') as f:
+        f.write(json.dumps(stats, indent=4))
+
 
 if __name__ == '__main__':
     file_URL = input('[stats.txt] file location: ')
