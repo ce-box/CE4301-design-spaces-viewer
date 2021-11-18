@@ -45,20 +45,22 @@ Para cada branch-predictor se varían sus parámetros:
 
 ## Benchmarks 🧪
 
-Los modelos de hardware serán probados con dos benchmarks: uno del tipo `SPEC` y otro del tipo `PARSEC`.
+Los modelos de hardware serán probados con dos benchmarks: uno del tipo [SPEC](http://www.m5sim.org/SPEC_benchmarks) y otro del tipo [PARSEC](https://parsec.cs.princeton.edu/download/tutorial/2.0/parsec-2.0-tutorial.pdf).
 
 ### Tabla 1. Benchmarks escogidos por cada tipo
 
-| Tipo     | Benchmark |
-| -------  | --------- |
-| SPEC2006 | 401.bzip  |
-| PARSEC   | canneal   |
+| Tipo     | Benchmark | Descripción |
+| -------  | --------- | ----------- |
+| SPEC2006 | 401.bzip  | [Algoritmo de compresión](https://github.com/MartijnB/compression-benchmark/blob/master/bzip2-1.0.6/bzip2.txt) de archivos en memoria |
+| PARSEC   | canneal   | [Algoritmo de recocido simulado](https://es.wikipedia.org/wiki/Algoritmo_de_recocido_simulado) consiente de la caché para optimizar los costos de enrutamiento en el diseño de chips|
 
 Estos benchmarks se seleccionaron por su alto uso de memoria, lo que nos permite variar parámetros de las memorias caché, como su tamaño, grado de asociatividad, cantidad de sets, entre otros y evaluar su rendimiento (*misses y hits*).
 
 ## Visualización de Estadísticas 📊
 
 ¿Cómo se visualizan los resultados de las pruebas? Creamos una herramienta que permite la visualización de los resultados obtenidos mediante gráficos. El sistema permite observar las cinco variaciones por parámetro para cada una de las combinaciones.
+
+()[]
 
 ### Tabla 2. Combinaciones posibles para las micro-arquitecturas seleccionadas
 
