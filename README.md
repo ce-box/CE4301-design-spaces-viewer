@@ -92,4 +92,21 @@ Estos benchmarks se seleccionaron por su alto uso de memoria, lo que nos permite
 | 23 | canneal   | RISCV | TraceCPU     | Bi_mode    | ----------- | ---------- |
 | 24 | canneal   | RISCV | TraceCPU     | Tournament | ----------- | ---------- |
 
-***
+## Autores ✏️
+
+* **Esteban Alvarado** - *Software Developer* - [@estalvgs1999](https://github.com/estalvgs1999)
+* **Gabriel Abarca**   - *Software Developer* - [@Abstractize](https://github.com/Abstractize/)
+* **Olman Castro**     - *Software Developer* - [@oldboy379](https://github.com/oldboy379)
+
+> Este proyecto fue desarrollado para el **curso CE4301 - Arquitectura de Computadores I** del Instituto Tecnológico de Costa Rica. 2021 🄯
+
+Agradecimiento al profesor del curso:
+
+* Prof. Luis Alberto Chavarría Zamora
+
+----
+
+<p align="center">
+<img src="https://static.platzi.com/media/achievements/badge-programacion-microcontroladores-pic-c-d3093418-a0e3-4b95-a6c2-77cf06af37f9.png" width="100"/>
+</p>
+
