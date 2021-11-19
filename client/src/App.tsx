@@ -1,6 +1,6 @@
-import './App.sass'
-import React, { Component } from 'react'
-import logo from './Assets/logo.svg'
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
 
 class App extends Component {
 	render() {
