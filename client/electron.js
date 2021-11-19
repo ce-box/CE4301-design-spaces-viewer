@@ -6,7 +6,7 @@ const isDev = require('electron-is-dev')
 const createWindow = () => {
 	// Create the browser window.
 	const mainWindow = new BrowserWindow({
-		//frame: false, // removes the frame from the BrowserWindow. It is advised that you either create a custom menu bar or remove this line
+		frame: false, // removes the frame from the BrowserWindow. It is advised that you either create a custom menu bar or remove this line
 		webPreferences: {
 			devTools: isDev, // toggles whether devtools are available. to use node write window.require('<node-name>')
 			nodeIntegration: true // turn this off if you don't mean to use node
@@ -21,9 +21,6 @@ const createWindow = () => {
 			? 'http://localhost:3000'
 			: `file://${path.join(__dirname, '../build/index.html')}`
 	)
-
-	// Open the DevTools. will only work if webPreferences::devTools is true
-	//mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
