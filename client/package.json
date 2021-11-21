@@ -2,24 +2,31 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Gabriel Abarca Aguilar",
+    "email": "gababarca@hotmail.com",
+    "url": "https://github.com/Abstractize/"
+  },
+  "description": "Data visualization for GEM5 stats",
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.20.37",
-    "@types/react": "^16.14.21",
-    "@types/react-dom": "^16.9.14",
-    "concurrently": "^5.3.0",
-    "electron": "^9.4.4",
-    "electron-builder": "^22.13.1",
-    "electron-is-dev": "^1.2.0",
-    "electronmon": "^1.1.2",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-scripts": "^3.4.1",
-    "typescript": "^3.9.10",
-    "wait-on": "^5.3.0"
+    "@electron/remote": "^2.0.1",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.8",
+    "@types/react": "^17.0.35",
+    "@types/react-dom": "^17.0.11",
+    "concurrently": "^6.4.0",
+    "electron-is-dev": "^2.0.0",
+    "electron-util": "^0.17.2",
+    "electronmon": "^2.0.2",
+    "frameless-titlebar": "^2.1.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "typescript": "^4.5.2",
+    "wait-on": "^6.0.0"
   },
   "scripts": {
     "start": "concurrently \"npm run react-serve\" \"wait-on http://localhost:3000 && npm run electron-start\"",
@@ -49,6 +56,11 @@
       "last 1 safari version"
     ]
   },
-  "main": "electron.js",
-  "homepage": "./"
+  "main": "public/electron.js",
+  "homepage": "./",
+  "devDependencies": {
+    "@types/electron": "^1.6.10",
+    "electron": "^16.0.1",
+    "electron-builder": "^22.13.1"
+  }
 }
