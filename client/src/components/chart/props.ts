@@ -1,5 +1,6 @@
 export interface Props<Data> {
-    width: number;
-    height: number;
+    title: string
     data: Data[];
+    width?: number;
+    height?: number;
 }

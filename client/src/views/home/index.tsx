@@ -16,7 +16,7 @@ export class Home extends PureComponent<Props, State> {
         }
     }
 
-    public toggle = () => this.setState({ escapeModalActive: !this.state.escapeModalActive });
+    toggle = () => this.setState({ escapeModalActive: !this.state.escapeModalActive });
 
     render() {
         return (
