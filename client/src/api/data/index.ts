@@ -1,4 +1,6 @@
 import { Data } from '../models';
 import stats from './global.stats.json';
 
-export {stats as CPUdata}
+const data: Data =  stats;
+
+export {data as CPUdata}

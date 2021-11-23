@@ -4,35 +4,10 @@ import { Props } from "./props";
 import { State } from "./state";
 import Dropdown from '../dropdown';
 import { Col, Row } from 'reactstrap';
-
-enum Benchmark {
-    BZIP = '401.bzip',
-    CANNEAL = 'canneal'
-}
-
-const benchmarks = Object.values(Benchmark);
-
-enum ISA {
-    ARM = 'ARM',
-    RISCV = 'RISC V'
-}
-
-const isas = Object.values(ISA);
-
-enum CPU {
-    TIMING_SIMPLE = 'TimingSimple',
-    TRACE_CPU = 'TraceCPU'
-}
-
-const cpus = Object.values(CPU);
-
-enum BPU {
-    TWO_BIT_LOCAL = '2bit_local',
-    BI_MODE = 'Bi_mode',
-    TOURNAMENT = 'Tournament'
-}
-
-const bpus = Object.values(BPU);
+import { Benchmark } from '../../shared/benchmarkTypes';
+import { ISA } from '../../shared/isaTypes';
+import { CPU } from '../../shared/cpuTypes';
+import { BPU } from '../../shared/bpuTypes';
 
 export default class Menu extends PureComponent<Props, State> {
 
@@ -51,42 +26,45 @@ export default class Menu extends PureComponent<Props, State> {
     toggleCPU = () => this.setState({ openCPU: !this.state.openCPU });
     toggleBPU = () => this.setState({ openBPU: !this.state.openBPU });
 
-
     render() {
         return (
             <Fragment>
                 <div style={{}}>
                     <Row>
                         <Col>
-                            <Dropdown
+                            <Dropdown<Benchmark>
                                 title='Benchmark'
-                                data={benchmarks}
+                                data={Object.values(Benchmark)}
                                 open={this.state.openBenchmarks}
                                 toggle={this.toggleBenchmarks}
+                                select={this.props.select.benchmark}
                             />
                         </Col>
                         <Col>
-                            <Dropdown
+                            <Dropdown<ISA>
                                 title='ISA'
-                                data={isas}
+                                data={Object.values(ISA)}
                                 open={this.state.openISAS}
                                 toggle={this.toggleISAS}
+                                select={this.props.select.isa}
                             />
                         </Col>
                         <Col>
-                            <Dropdown
+                            <Dropdown<CPU>
                                 title='CPU'
-                                data={cpus}
+                                data={Object.values(CPU)}
                                 open={this.state.openCPU}
                                 toggle={this.toggleCPU}
+                                select={this.props.select.cpu}
                             />
                         </Col>
                         <Col>
-                            <Dropdown
+                            <Dropdown<BPU>
                                 title='BPU'
-                                data={bpus}
+                                data={Object.values(BPU)}
                                 open={this.state.openBPU}
                                 toggle={this.toggleBPU}
+                                select={this.props.select.bpu}
                             />
                         </Col>
                     </Row>

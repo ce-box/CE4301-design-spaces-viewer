@@ -7,7 +7,7 @@ export class DataActionCreators {
     constructor(
         private readonly dataService: DataService
     ) { }
-    request = (): AppThunkAction<Action> => async (dispatch, getState) => {
+    public request = (): AppThunkAction<Action> => async (dispatch, getState) => {
         const appState = getState();
 
         if (appState && appState.data) {
@@ -16,9 +16,9 @@ export class DataActionCreators {
                 .then(data => {
                     dispatch({ type: ActionType.SUCCESS, data: data });
                 }).catch(e =>
-                    dispatch({ type: ActionType.FAILURE, startDateIndex: startDateIndex, error: e }));
+                    dispatch({ type: ActionType.FAILURE,  error: e }));
 
-            dispatch({ type: ActionType.REQUEST, startDateIndex: startDateIndex });
+            dispatch({ type: ActionType.REQUEST });
         }
     }
 }

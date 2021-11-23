@@ -4,7 +4,6 @@ import { Data } from "../../api/models/data";
 
 interface DataAction extends ReduxAction<ActionType> {
     type: ActionType;
-    startDateIndex: number;
 }
 
 export interface RequestDataAction extends DataAction {

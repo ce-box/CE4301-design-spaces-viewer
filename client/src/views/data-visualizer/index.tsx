@@ -4,23 +4,52 @@ import { connect } from "react-redux";
 import { Col, Row } from 'reactstrap';
 import Chart from "../../components/chart";
 import Menu from '../../components/menu';
+import { Benchmark } from '../../shared/benchmarkTypes';
+import { BPU } from '../../shared/bpuTypes';
+import { CPU } from '../../shared/cpuTypes';
+import { ISA } from '../../shared/isaTypes';
 import { Props } from "./props";
 import { State } from "./state";
 
 export class DataVisualizer extends Component<Props, State> {
+    selectedValues = {
+        benchmark: Benchmark.BZIP,
+        isa: ISA.ARM,
+        cpu: CPU.TIMING_SIMPLE,
+        bpu: BPU.BI_MODE
+    }
+    selectBenchmark = (item: Benchmark) => 
+        this.selectedValues.benchmark = item;
+
+    selectCPU = (item: CPU) => 
+        this.selectedValues.cpu = item;
+
+    selectISA = (item: ISA) =>         
+        this.selectedValues.isa = item;
+
+    selectBPU = (item: BPU) => 
+        this.selectedValues.bpu = item;
+
     render() {
         return (
             <Fragment>
                 <h1> Estadísticas </h1>
                 <Row>
                     <Col>
-                        <Menu />
+                        <Menu select= {{
+                            benchmark: this.selectBenchmark,
+                            isa: this.selectISA,
+                            cpu: this.selectCPU,
+                            bpu: this.selectBPU
+                        }}/>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <Chart<{ name: string, uv: number }>
-                            title='Something vs Other Something wtf!'
+                            // l1cache.size & l1cache.assoc
+                            // vs system.cpu.numCycles
+                            title='Ciclos por Medición!' //BARRAS
                             data={data.map(item => {
                                 return {
                                     name: item.name,
@@ -31,7 +60,24 @@ export class DataVisualizer extends Component<Props, State> {
                     </Col>
                     <Col>
                         <Chart<{ name: string, pv: number }>
-                            title='Something vs Other Something 2 wtf!'
+                            // l1cache.assoc
+                            // vs system.cpu.dcache.overallMissRate::total
+                            // vs system.cpu.icache.overallMissRate::cpu.inst
+                            title='Miss Rate % vs Asociatividad' // 2 Lineas
+                            data={data.map(item => {
+                                return {
+                                    name: item.name,
+                                    pv: item.pv
+                                }
+                            })}
+                        />
+                    </Col>
+                    <Col>
+                        <Chart<{ name: string, pv: number }>
+                            // l1cache.assoc
+                            // vs system.cpu.dcache.overallMisses::cpu.data
+                            // vs system.cpu.icache.overallMisses::cpu.inst
+                            title='Cantidad de Misses vs Asociatividad' // 2 Lineas
                             data={data.map(item => {
                                 return {
                                     name: item.name,
@@ -45,7 +91,9 @@ export class DataVisualizer extends Component<Props, State> {
                 <Row>
                     <Col>
                         <Chart<{ name: string, amt: number }>
-                            title='Something vs Other Something 3 wtf!'
+                            // l1cache.size & l1cache.assoc
+                            // vs system.cpu.branchPred.BTBMissPct
+                            title='% BTB Miss por Medición' // Barras
                             data={data.map(item => {
                                 return {
                                     name: item.name,
@@ -56,7 +104,10 @@ export class DataVisualizer extends Component<Props, State> {
                     </Col>
                     <Col>
                         <Chart<{ name: string, pizza: number }>
-                            title='Something vs Other Something 4 wtf!'
+                            title='Cantidad de Aciertos y Desaciertos por Medición'
+                            // l1cache.size & l1cache.assoc
+                            // vs system.cpu.predictedBranches
+                            // vs system.cpu.BranchMispred
                             data={data.map(item => {
                                 return {
                                     name: item.name,

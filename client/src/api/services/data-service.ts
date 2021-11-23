@@ -15,8 +15,8 @@ export class DataService extends Service<Data>
     }
 
     public async GetAsync(): Promise<Data[]> {
-        return new Promise((resolve, reject) => {
-            resolve(CPUdata);
+        return new Promise((resolve, reject) => {            
+            resolve([CPUdata]);
         });
     }
 

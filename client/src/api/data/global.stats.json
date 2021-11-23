@@ -1,232 +1,232 @@
 {
     "config": {
-        "l1cache.size": ["512","1k","2k","4k","8k"],
-        "l1cache.assoc": ["DM","2-way","4-way","8-way","16-way"]
+        "l1cacheSize": ["512","1k","2k","4k","8k"],
+        "l1cacheAssoc": ["DM","2-way","4-way","8-way","16-way"]
     },
-    "401.bzip2": {
+    "bzip2": {
         "arm": {
-            "TimingSimpleCPU": {
-                "2bit_local": {
+            "timingSimpleCPU": {
+                "twoBitLocal": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Bi_mode": {
+                "biMode": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Tournament": {
+                "tournament": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 }
             },
-            "TraceCPU": {
-                "2bit_local": {
+            "traceCPU": {
+                "twoBitLocal": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Bi_mode": {
+                "biMode": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Tournament": {
+                "tournament": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 }
             }
         },
-        "risc-v": {
-            "TimingSimpleCPU": {
-                "2bit_local": {
+        "riscV": {
+            "timingSimpleCPU": {
+                "twoBitLocal": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Bi_mode": {
+                "biMode": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Tournament": {
+                "tournament": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 }
             },
-            "TraceCPU": {
-                "2bit_local": {
+            "traceCPU": {
+                "twoBitLocal": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Bi_mode": {
+                "biMode": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Tournament": {
+                "tournament": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 }
@@ -236,228 +236,228 @@
     },
     "canneals": {
         "arm": {
-            "TimingSimpleCPU": {
-                "2bit_local": {
+            "timingSimpleCPU": {
+                "twoBitLocal": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Bi_mode": {
+                "biMode": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Tournament": {
+                "tournament": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 }
             },
-            "TraceCPU": {
-                "2bit_local": {
+            "traceCPU": {
+                "twoBitLocal": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Bi_mode": {
+                "biMode": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Tournament": {
+                "tournament": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 }
             }
         },
-        "risc-v": {
-            "TimingSimpleCPU": {
-                "2bit_local": {
+        "riscV": {
+            "timingSimpleCPU": {
+                "twoBitLocal": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Bi_mode": {
+                "biMode": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Tournament": {
+                "tournament": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 }
             },
-            "TraceCPU": {
-                "2bit_local": {
+            "traceCPU": {
+                "twoBitLocal": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Bi_mode": {
+                "biMode": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 },
-                "Tournament": {
+                "tournament": {
                     "stats":{
                         "cpu": {
-                            "system.cpu.numCycles": [404913297.0, 0, 0, 0, 0]
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
                         },
                         "cache": {
-                            "system.cpu.dcache.overallMisses::cpu.data": [423398, 0, 0, 0, 0],
-                            "system.cpu.dcache.overallMissRate::total": [0.007564, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMisses::cpu.inst": [1080.0, 0, 0, 0, 0],
-                            "system.cpu.icache.overallMissRate::cpu.inst": [0.000008, 0, 0, 0, 0]
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
                         },
-                        "branch-predictor": {
-                            "system.cpu.branchPred.BTBMissPct": [0.492611, 0, 0, 0, 0],
-                            "system.cpu.predictedBranches": [210, 0, 0, 0, 0],
-                            "system.cpu.BranchMispred": [621, 0, 0, 0, 0]
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
                         }
                     }
                 }

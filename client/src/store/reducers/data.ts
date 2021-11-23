@@ -1,11 +1,11 @@
-import { Reducer } from 'redux';
+import { Reducer as ReduxReducer } from 'redux';
 import { DataActionType as ActionType } from '../action-types/';
 import { DataAction as Action } from '../actions';
 import { Data } from '../states';
 
 const initialState: Data = new Data();
 
-const reducer: Reducer<Data, Action> = (
+const Reducer: ReduxReducer<Data, Action> = (
     state: Data | undefined,
     action: Action,
 ): Data => {
@@ -31,4 +31,4 @@ const reducer: Reducer<Data, Action> = (
     }
 }
 
-export default reducer;
+export default Reducer;
