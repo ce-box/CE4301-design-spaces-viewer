@@ -5,9 +5,6 @@ import { Props } from "./props";
 import { State } from "./state";
 
 export default class Chart<Data> extends PureComponent<Props<Data>, State> {
-    componentDidUpdate() {
-        console.log(Object.keys(this.props.data))
-    }
     render() {
         return (
             <Fragment>

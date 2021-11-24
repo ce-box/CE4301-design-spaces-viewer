@@ -1,47 +1,47 @@
-interface CPUStats {
+export interface CPUStats {
     systemCPUNumCycles: number[]
 }
 
-interface CacheStats {
+export interface CacheStats {
     missesCPUData: number[],
     missRateTotal: number[],
     missesCPUInst: number[],
     missRateCPUInst: number[]
 }
 
-interface BranchPredictorStats {
+export interface BranchPredictorStats {
     brachPredBTBMissPct: number[],
     predictedBranches: number[],
     branchMissPred: number[]
 }
 
-interface Stats {
+export interface Stats {
     cpu: CPUStats,
     cache: CacheStats,
     branchPredictor: BranchPredictorStats
 }
 
-interface BPU {
+export interface BPU {
     stats: Stats
 }
 
-interface CPU {
+export interface CPU {
     twoBitLocal: BPU
     biMode: BPU
     tournament: BPU
 }
 
-interface ISA {
+export interface ISA {
     timingSimpleCPU: CPU,
     traceCPU: CPU
 }
 
-interface Benchmark {
+export interface Benchmark {
     arm: ISA,
     riscV: ISA,
 }
 
-interface Config {
+export interface Config {
     l1cacheSize: string[],
     l1cacheAssoc: string[],
 }

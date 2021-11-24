@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { Component } from "react";
 import { connect } from "react-redux";
 import { Col, Row } from 'reactstrap';
-import { DataService } from '../../api/services';
 import Chart from "../../components/chart";
 import Menu from '../../components/menu';
 import { Benchmark } from '../../shared/benchmarkTypes';
@@ -15,12 +14,8 @@ import { Props } from "./props";
 
 export class DataVisualizer extends Component<Props> {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.request(this.selectedValues);
-    }
-    
-    componentDidUpdate(){
-        console.log(this.props.data);
     }
 
     selectedValues = {
@@ -70,8 +65,6 @@ export class DataVisualizer extends Component<Props> {
                 <Row>
                     <Col>
                         <Chart<{ name: string, cycle: number }>
-                            // l1cache.size & l1cache.assoc
-                            // vs system.cpu.numCycles
                             title='Ciclos por Medición' //BARRAS
                             data={this.props.data.map(item => {
                                 return {
@@ -82,31 +75,30 @@ export class DataVisualizer extends Component<Props> {
                         />
                     </Col>
                     <Col>
-                        <Chart<{ name: string, total: number, cpuInst: number }>
+                        <Chart<{ name: string, misses: number }>
                             // l1cache.assoc
                             // vs system.cpu.dcache.overallMissRate::total
                             // vs system.cpu.icache.overallMissRate::cpu.inst
-                            title='Miss Rate % vs Asociatividad' // 2 Lineas
+                            title='Miss Rate vs Asociatividad' // 2 Lineas
                             data={this.props.data.map(item => {
                                 return {
                                     name: item.l1cacheAssoc,
-                                    total: item.missesCPUData,
-                                    cpuInst: item.missesCPUInst
+                                    misses: item.missesCPUData,
+                                    //cpuInst: item.missesCPUInst
                                 }
                             })}
                         />
                     </Col>
                     <Col>
-                        <Chart<{ name: string, total: number, cpuInst: number }>
+                        <Chart<{ name: string, misses: number }>
                             // l1cache.assoc
                             // vs system.cpu.dcache.overallMisses::cpu.data
                             // vs system.cpu.icache.overallMisses::cpu.inst
-                            title='Cantidad de Misses vs Asociatividad' // 2 Lineas
+                            title='Miss Rate vs Tamaño' // 2 Lineas
                             data={this.props.data.map(item => {
                                 return {
-                                    name: item.l1cacheAssoc,
-                                    total: item.missRateTotal,
-                                    cpuInst: item.missRateTotal
+                                    name: item.l1cacheSize,
+                                    misses: item.missRateTotal,
                                 }
                             })}
                         />
@@ -129,10 +121,14 @@ export class DataVisualizer extends Component<Props> {
                     </Col>
                     <Col>
                         <h2 style={{ width: '100%', height: '18%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', display: 'flex' }}>
-                            Banana
+                            AVG Cycles
                         </h2>
-                        <div style={{ width: '%', height: '82%' }}>
-
+                        <div style={{ width: '100%', height: '82%' }}>
+                            <h3>{
+                                this.props.data.map(item => item.systemCPUNumCycles).reduce(function (avg, value, _, { length }) {
+                                    return avg + value / length;
+                                }, 0).toLocaleString('en-us', {minimumFractionDigits: 2})
+                            }</h3>
                         </div>
 
                     </Col>
