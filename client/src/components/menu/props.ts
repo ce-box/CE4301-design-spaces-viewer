@@ -7,6 +7,13 @@ export interface Props {
         benchmark: (item: Benchmark) => void,
         isa: (item: ISA) => void,
         cpu: (item: CPU) => void,
-        bpu: (item: BPU) => void 
-    } 
+        bpu: (item: BPU) => void
+    }
+    selectedValues: {
+        benchmark: Benchmark,
+        isa: ISA,
+        cpu: CPU,
+        bpu: BPU
+
+    }
 }

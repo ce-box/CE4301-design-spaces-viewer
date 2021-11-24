@@ -3,10 +3,11 @@ import { applyMiddleware, combineReducers, compose, createStore, Middleware, Sto
 import reducers from './reducers';
 import { History } from 'history';
 import { ApplicationState } from './states';
+import thunk from 'redux-thunk';
 
 export default function configureStore(history: History, initialState?: ApplicationState) {
     const middleware: Middleware[] = [
-
+        thunk
     ];
 
     const rootReducer = combineReducers({

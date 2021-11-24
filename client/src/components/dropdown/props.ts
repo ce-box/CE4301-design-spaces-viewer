@@ -4,4 +4,5 @@ export interface Props<Enum> {
     select: (item: Enum) => void;
     open: boolean;
     data: Enum[];
+    selectedValue: Enum
 }

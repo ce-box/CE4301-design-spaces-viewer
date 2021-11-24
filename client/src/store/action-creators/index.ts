@@ -1,3 +1,3 @@
-import { DataActionCreators } from './data-action-creators';
+import { actionCreators } from './data-action-creators';
 
-export { DataActionCreators };
+export { actionCreators as DataActionCreators };

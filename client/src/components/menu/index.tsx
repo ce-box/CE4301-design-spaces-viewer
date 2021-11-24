@@ -34,6 +34,7 @@ export default class Menu extends PureComponent<Props, State> {
                         <Col>
                             <Dropdown<Benchmark>
                                 title='Benchmark'
+                                selectedValue={this.props.selectedValues.benchmark}
                                 data={Object.values(Benchmark)}
                                 open={this.state.openBenchmarks}
                                 toggle={this.toggleBenchmarks}
@@ -43,6 +44,7 @@ export default class Menu extends PureComponent<Props, State> {
                         <Col>
                             <Dropdown<ISA>
                                 title='ISA'
+                                selectedValue={this.props.selectedValues.isa}
                                 data={Object.values(ISA)}
                                 open={this.state.openISAS}
                                 toggle={this.toggleISAS}
@@ -52,6 +54,7 @@ export default class Menu extends PureComponent<Props, State> {
                         <Col>
                             <Dropdown<CPU>
                                 title='CPU'
+                                selectedValue={this.props.selectedValues.cpu}
                                 data={Object.values(CPU)}
                                 open={this.state.openCPU}
                                 toggle={this.toggleCPU}
@@ -61,6 +64,7 @@ export default class Menu extends PureComponent<Props, State> {
                         <Col>
                             <Dropdown<BPU>
                                 title='BPU'
+                                selectedValue={this.props.selectedValues.bpu}
                                 data={Object.values(BPU)}
                                 open={this.state.openBPU}
                                 toggle={this.toggleBPU}
