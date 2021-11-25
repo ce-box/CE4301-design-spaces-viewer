@@ -19,7 +19,7 @@ fontsize=14;
 label="system \n: System";
 shape=Mrecord;
 style="rounded, filled";
-tooltip="byte_order&#61;little&#10;\cache_line_size&#61;64&#10;\eventq_index&#61;0&#10;\exit_on_work_items&#61;false&#10;\init_param&#61;0&#10;\kvm_vm&#61;Null&#10;\m5ops_base&#61;4294901760&#10;\mem_mode&#61;timing&#10;\mem_ranges&#61;0:536870912&#10;\memories&#61;system.mem_ctrls.dram&#10;\mmap_using_noreserve&#61;false&#10;\multi_thread&#61;false&#10;\num_work_ids&#61;16&#10;\readfile&#61;&#10;\redirect_paths&#61;system.redirect_paths0 system.redirect_paths1 system.redirect_paths2&#10;\shadow_rom_ranges&#61;&#10;\shared_backstore&#61;&#10;\symbolfile&#61;&#10;\thermal_components&#61;&#10;\thermal_model&#61;Null&#10;\work_begin_ckpt_count&#61;0&#10;\work_begin_cpu_id_exit&#61;-1&#10;\work_begin_exit_count&#61;0&#10;\work_cpus_ckpt_count&#61;0&#10;\work_end_ckpt_count&#61;0&#10;\work_end_exit_count&#61;0&#10;\work_item_id&#61;-1&#10;\workload&#61;system.workload";
+tooltip="byte_order&#61;little&#10;\cache_line_size&#61;64&#10;\eventq_index&#61;0&#10;\exit_on_work_items&#61;false&#10;\init_param&#61;0&#10;\m5ops_base&#61;0&#10;\mem_mode&#61;timing&#10;\mem_ranges&#61;0:536870912&#10;\memories&#61;system.mem_ctrls.dram&#10;\mmap_using_noreserve&#61;false&#10;\multi_thread&#61;false&#10;\num_work_ids&#61;16&#10;\readfile&#61;&#10;\redirect_paths&#61;system.redirect_paths0 system.redirect_paths1 system.redirect_paths2&#10;\shadow_rom_ranges&#61;&#10;\shared_backstore&#61;&#10;\symbolfile&#61;&#10;\thermal_components&#61;&#10;\thermal_model&#61;Null&#10;\work_begin_ckpt_count&#61;0&#10;\work_begin_cpu_id_exit&#61;-1&#10;\work_begin_exit_count&#61;0&#10;\work_cpus_ckpt_count&#61;0&#10;\work_end_ckpt_count&#61;0&#10;\work_end_exit_count&#61;0&#10;\work_item_id&#61;-1&#10;\workload&#61;system.workload";
 system_system_port [color="#000000", fillcolor="#b6b8bc", fontcolor="#000000", fontname=Arial, fontsize=14, label=system_port, shape=Mrecord, style="rounded, filled"];
 subgraph cluster_system_dvfs_handler {
 color="#000000";
@@ -42,7 +42,7 @@ fontsize=14;
 label="cpu \n: TimingSimpleCPU";
 shape=Mrecord;
 style="rounded, filled";
-tooltip="branchPred&#61;system.cpu.branchPred&#10;\checker&#61;Null&#10;\clk_domain&#61;system.cpu_clk_domain&#10;\cpu_id&#61;0&#10;\do_checkpoint_insts&#61;true&#10;\do_statistics_insts&#61;true&#10;\eventq_index&#61;0&#10;\function_trace&#61;false&#10;\function_trace_start&#61;0&#10;\interrupts&#61;system.cpu.interrupts&#10;\isa&#61;system.cpu.isa&#10;\max_insts_all_threads&#61;0&#10;\max_insts_any_thread&#61;100000000&#10;\mmu&#61;system.cpu.mmu&#10;\numThreads&#61;1&#10;\power_gating_on_idle&#61;false&#10;\power_model&#61;&#10;\power_state&#61;system.cpu.power_state&#10;\progress_interval&#61;0&#10;\pwr_gating_latency&#61;300&#10;\simpoint_start_insts&#61;&#10;\socket_id&#61;0&#10;\switched_out&#61;false&#10;\syscallRetryLatency&#61;10000&#10;\system&#61;system&#10;\tracer&#61;system.cpu.tracer&#10;\workload&#61;system.cpu.workload";
+tooltip="branchPred&#61;Null&#10;\checker&#61;Null&#10;\clk_domain&#61;system.cpu_clk_domain&#10;\cpu_id&#61;0&#10;\do_checkpoint_insts&#61;true&#10;\do_statistics_insts&#61;true&#10;\eventq_index&#61;0&#10;\function_trace&#61;false&#10;\function_trace_start&#61;0&#10;\interrupts&#61;system.cpu.interrupts&#10;\isa&#61;system.cpu.isa&#10;\max_insts_all_threads&#61;0&#10;\max_insts_any_thread&#61;100000000&#10;\mmu&#61;system.cpu.mmu&#10;\numThreads&#61;1&#10;\power_gating_on_idle&#61;false&#10;\power_model&#61;&#10;\power_state&#61;system.cpu.power_state&#10;\progress_interval&#61;0&#10;\pwr_gating_latency&#61;300&#10;\simpoint_start_insts&#61;&#10;\socket_id&#61;0&#10;\switched_out&#61;false&#10;\syscallRetryLatency&#61;10000&#10;\system&#61;system&#10;\tracer&#61;system.cpu.tracer&#10;\workload&#61;system.cpu.workload";
 system_cpu_icache_port [color="#000000", fillcolor="#959ead", fontcolor="#000000", fontname=Arial, fontsize=14, label=icache_port, shape=Mrecord, style="rounded, filled"];
 system_cpu_dcache_port [color="#000000", fillcolor="#959ead", fontcolor="#000000", fontname=Arial, fontsize=14, label=dcache_port, shape=Mrecord, style="rounded, filled"];
 subgraph cluster_system_cpu_mmu {
@@ -51,30 +51,30 @@ fillcolor="#bab6ae";
 fontcolor="#000000";
 fontname=Arial;
 fontsize=14;
-label="mmu \n: X86MMU";
+label="mmu \n: RiscvMMU";
 shape=Mrecord;
 style="rounded, filled";
-tooltip="dtb&#61;system.cpu.mmu.dtb&#10;\eventq_index&#61;0&#10;\itb&#61;system.cpu.mmu.itb";
+tooltip="dtb&#61;system.cpu.mmu.dtb&#10;\eventq_index&#61;0&#10;\itb&#61;system.cpu.mmu.itb&#10;\pma_checker&#61;system.cpu.mmu.pma_checker&#10;\pmp&#61;system.cpu.mmu.pmp";
 subgraph cluster_system_cpu_mmu_itb {
 color="#000000";
 fillcolor="#9f9c95";
 fontcolor="#000000";
 fontname=Arial;
 fontsize=14;
-label="itb \n: X86TLB";
+label="itb \n: RiscvTLB";
 shape=Mrecord;
 style="rounded, filled";
-tooltip="eventq_index&#61;0&#10;\size&#61;64&#10;\system&#61;system&#10;\walker&#61;system.cpu.mmu.itb.walker";
+tooltip="eventq_index&#61;0&#10;\pma_checker&#61;system.cpu.mmu.pma_checker&#10;\pmp&#61;system.cpu.mmu.pmp&#10;\size&#61;64&#10;\walker&#61;system.cpu.mmu.itb.walker";
 subgraph cluster_system_cpu_mmu_itb_walker {
 color="#000000";
 fillcolor="#84827c";
 fontcolor="#000000";
 fontname=Arial;
 fontsize=14;
-label="walker \n: X86PagetableWalker";
+label="walker \n: RiscvPagetableWalker";
 shape=Mrecord;
 style="rounded, filled";
-tooltip="clk_domain&#61;system.cpu_clk_domain&#10;\eventq_index&#61;0&#10;\num_squash_per_cycle&#61;4&#10;\power_model&#61;&#10;\power_state&#61;system.cpu.mmu.itb.walker.power_state&#10;\system&#61;system";
+tooltip="clk_domain&#61;system.cpu_clk_domain&#10;\eventq_index&#61;0&#10;\num_squash_per_cycle&#61;4&#10;\pma_checker&#61;system.cpu.mmu.pma_checker&#10;\pmp&#61;system.cpu.mmu.pmp&#10;\power_model&#61;&#10;\power_state&#61;system.cpu.mmu.itb.walker.power_state&#10;\system&#61;system";
 system_cpu_mmu_itb_walker_port [color="#000000", fillcolor="#6a6863", fontcolor="#000000", fontname=Arial, fontsize=14, label=port, shape=Mrecord, style="rounded, filled"];
 subgraph cluster_system_cpu_mmu_itb_walker_power_state {
 color="#000000";
@@ -98,20 +98,20 @@ fillcolor="#9f9c95";
 fontcolor="#000000";
 fontname=Arial;
 fontsize=14;
-label="dtb \n: X86TLB";
+label="dtb \n: RiscvTLB";
 shape=Mrecord;
 style="rounded, filled";
-tooltip="eventq_index&#61;0&#10;\size&#61;64&#10;\system&#61;system&#10;\walker&#61;system.cpu.mmu.dtb.walker";
+tooltip="eventq_index&#61;0&#10;\pma_checker&#61;system.cpu.mmu.pma_checker&#10;\pmp&#61;system.cpu.mmu.pmp&#10;\size&#61;64&#10;\walker&#61;system.cpu.mmu.dtb.walker";
 subgraph cluster_system_cpu_mmu_dtb_walker {
 color="#000000";
 fillcolor="#84827c";
 fontcolor="#000000";
 fontname=Arial;
 fontsize=14;
-label="walker \n: X86PagetableWalker";
+label="walker \n: RiscvPagetableWalker";
 shape=Mrecord;
 style="rounded, filled";
-tooltip="clk_domain&#61;system.cpu_clk_domain&#10;\eventq_index&#61;0&#10;\num_squash_per_cycle&#61;4&#10;\power_model&#61;&#10;\power_state&#61;system.cpu.mmu.dtb.walker.power_state&#10;\system&#61;system";
+tooltip="clk_domain&#61;system.cpu_clk_domain&#10;\eventq_index&#61;0&#10;\num_squash_per_cycle&#61;4&#10;\pma_checker&#61;system.cpu.mmu.pma_checker&#10;\pmp&#61;system.cpu.mmu.pmp&#10;\power_model&#61;&#10;\power_state&#61;system.cpu.mmu.dtb.walker.power_state&#10;\system&#61;system";
 system_cpu_mmu_dtb_walker_port [color="#000000", fillcolor="#6a6863", fontcolor="#000000", fontname=Arial, fontsize=14, label=port, shape=Mrecord, style="rounded, filled"];
 subgraph cluster_system_cpu_mmu_dtb_walker_power_state {
 color="#000000";
@@ -127,6 +127,30 @@ tooltip="clk_gate_bins&#61;20&#10;\clk_gate_max&#61;1000000000000&#10;\clk_gate_
 
 }
 
+}
+
+subgraph cluster_system_cpu_mmu_pma_checker {
+color="#000000";
+fillcolor="#9f9c95";
+fontcolor="#000000";
+fontname=Arial;
+fontsize=14;
+label="pma_checker \n: PMAChecker";
+shape=Mrecord;
+style="rounded, filled";
+tooltip="eventq_index&#61;0&#10;\uncacheable&#61;";
+}
+
+subgraph cluster_system_cpu_mmu_pmp {
+color="#000000";
+fillcolor="#9f9c95";
+fontcolor="#000000";
+fontname=Arial;
+fontsize=14;
+label="pmp \n: PMP";
+shape=Mrecord;
+style="rounded, filled";
+tooltip="eventq_index&#61;0&#10;\pmp_entries&#61;16";
 }
 
 }
@@ -164,31 +188,7 @@ fontsize=14;
 label="workload \n: Process";
 shape=Mrecord;
 style="rounded, filled";
-tooltip="cmd&#61;./src/benchmark ./data/input.program&#10;\cwd&#61;/home/ealvarado/Documents/tec/ce4301-arquitectura-computadores/GEM5/spec/Project1_SPEC/401.bzip2&#10;\drivers&#61;&#10;\egid&#61;100&#10;\env&#61;&#10;\errout&#61;cerr&#10;\euid&#61;100&#10;\eventq_index&#61;0&#10;\executable&#61;./src/benchmark&#10;\gid&#61;100&#10;\input&#61;cin&#10;\kvmInSE&#61;false&#10;\maxStackSize&#61;67108864&#10;\output&#61;cout&#10;\pgid&#61;100&#10;\pid&#61;100&#10;\ppid&#61;0&#10;\release&#61;5.1.0&#10;\simpoint&#61;0&#10;\system&#61;system&#10;\uid&#61;100&#10;\useArchPT&#61;false";
-}
-
-subgraph cluster_system_cpu_branchPred {
-color="#000000";
-fillcolor="#bab6ae";
-fontcolor="#000000";
-fontname=Arial;
-fontsize=14;
-label="branchPred \n: TournamentBP";
-shape=Mrecord;
-style="rounded, filled";
-tooltip="BTBEntries&#61;4096&#10;\BTBTagSize&#61;16&#10;\RASSize&#61;16&#10;\choiceCtrBits&#61;2&#10;\choicePredictorSize&#61;8192&#10;\eventq_index&#61;0&#10;\globalCtrBits&#61;2&#10;\globalPredictorSize&#61;8192&#10;\indirectBranchPred&#61;system.cpu.branchPred.indirectBranchPred&#10;\instShiftAmt&#61;2&#10;\localCtrBits&#61;2&#10;\localHistoryTableSize&#61;2048&#10;\localPredictorSize&#61;2048&#10;\numThreads&#61;1";
-subgraph cluster_system_cpu_branchPred_indirectBranchPred {
-color="#000000";
-fillcolor="#9f9c95";
-fontcolor="#000000";
-fontname=Arial;
-fontsize=14;
-label="indirectBranchPred \n: SimpleIndirectPredictor";
-shape=Mrecord;
-style="rounded, filled";
-tooltip="eventq_index&#61;0&#10;\indirectGHRBits&#61;13&#10;\indirectHashGHR&#61;true&#10;\indirectHashTargets&#61;true&#10;\indirectPathLength&#61;3&#10;\indirectSets&#61;256&#10;\indirectTagSize&#61;16&#10;\indirectWays&#61;2&#10;\instShiftAmt&#61;2&#10;\numThreads&#61;1";
-}
-
+tooltip="cmd&#61;./src/benchmark ./data/input.program&#10;\cwd&#61;/home/ealvarado/Documents/tec/ce4301-arquitectura-computadores/proyecto-03/benchmarks/spec/401.bzip2/riscv&#10;\drivers&#61;&#10;\egid&#61;100&#10;\env&#61;&#10;\errout&#61;cerr&#10;\euid&#61;100&#10;\eventq_index&#61;0&#10;\executable&#61;./src/benchmark&#10;\gid&#61;100&#10;\input&#61;cin&#10;\kvmInSE&#61;false&#10;\maxStackSize&#61;67108864&#10;\output&#61;cout&#10;\pgid&#61;100&#10;\pid&#61;100&#10;\ppid&#61;0&#10;\release&#61;5.1.0&#10;\simpoint&#61;0&#10;\system&#61;system&#10;\uid&#61;100&#10;\useArchPT&#61;false";
 }
 
 subgraph cluster_system_cpu_isa {
@@ -197,10 +197,10 @@ fillcolor="#bab6ae";
 fontcolor="#000000";
 fontname=Arial;
 fontsize=14;
-label="isa \n: X86ISA";
+label="isa \n: RiscvISA";
 shape=Mrecord;
 style="rounded, filled";
-tooltip="eventq_index&#61;0&#10;\vendor_string&#61;M5 Simulator";
+tooltip="eventq_index&#61;0";
 }
 
 subgraph cluster_system_cpu_icache {
@@ -505,25 +505,10 @@ fillcolor="#bab6ae";
 fontcolor="#000000";
 fontname=Arial;
 fontsize=14;
-label="interrupts \n: X86LocalApic";
+label="interrupts \n: RiscvInterrupts";
 shape=Mrecord;
 style="rounded, filled";
-tooltip="clk_domain&#61;system.cpu.interrupts.clk_domain&#10;\eventq_index&#61;0&#10;\int_latency&#61;1000&#10;\pio_latency&#61;100000&#10;\system&#61;system";
-system_cpu_interrupts_int_requestor [color="#000000", fillcolor="#94918b", fontcolor="#000000", fontname=Arial, fontsize=14, label=int_requestor, shape=Mrecord, style="rounded, filled"];
-system_cpu_interrupts_int_responder [color="#000000", fillcolor="#94918b", fontcolor="#000000", fontname=Arial, fontsize=14, label=int_responder, shape=Mrecord, style="rounded, filled"];
-system_cpu_interrupts_pio [color="#000000", fillcolor="#94918b", fontcolor="#000000", fontname=Arial, fontsize=14, label=pio, shape=Mrecord, style="rounded, filled"];
-subgraph cluster_system_cpu_interrupts_clk_domain {
-color="#000000";
-fillcolor="#9f9c95";
-fontcolor="#000000";
-fontname=Arial;
-fontsize=14;
-label="clk_domain \n: DerivedClockDomain";
-shape=Mrecord;
-style="rounded, filled";
-tooltip="clk_divider&#61;16&#10;\clk_domain&#61;system.cpu_clk_domain&#10;\eventq_index&#61;0";
-}
-
+tooltip="eventq_index&#61;0";
 }
 
 }
@@ -817,7 +802,7 @@ fillcolor="#bab6ae";
 fontcolor="#000000";
 fontname=Arial;
 fontsize=14;
-label="workload \n: X86EmuLinux";
+label="workload \n: RiscvEmuLinux";
 shape=Mrecord;
 style="rounded, filled";
 tooltip="eventq_index&#61;0&#10;\wait_for_remote_gdb&#61;false";
@@ -833,9 +818,6 @@ system_cpu_dcache_port -> system_cpu_dcache_cpu_side  [dir=forward];
 system_cpu_mmu_itb_walker_port -> system_cpu_itb_walker_cache_cpu_side  [dir=forward];
 system_cpu_mmu_dtb_walker_port -> system_cpu_dtb_walker_cache_cpu_side  [dir=forward];
 system_membus_cpu_side_ports -> system_l2_mem_side  [dir=back];
-system_membus_cpu_side_ports -> system_cpu_interrupts_int_requestor  [dir=back];
-system_membus_mem_side_ports -> system_cpu_interrupts_pio  [dir=forward];
-system_membus_mem_side_ports -> system_cpu_interrupts_int_responder  [dir=forward];
 system_membus_mem_side_ports -> system_mem_ctrls_port  [dir=forward];
 system_tol2bus_cpu_side_ports -> system_cpu_icache_mem_side  [dir=back];
 system_tol2bus_cpu_side_ports -> system_cpu_dcache_mem_side  [dir=back];
