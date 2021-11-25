@@ -11,7 +11,7 @@ config = {
 }
 
 
-def run_parsec_bm(cpu='TimingSimpleCPU', isa='ARM', max_instructions=100000000):
+def run_parsec_bm(cpu='TimingSimpleCPU', isa='ARM', max_instructions=100000):
 
     '''
     

@@ -6,4 +6,4 @@ export PY=$GEM5_DIR/configs/example/se.py
 export BENCHMARK=./src/blackscholes
 export ARGUMENT=./inputs/input_test/in_4.txt
 # -- Ejecuci´on del ambiente --
-time $OPT -d m5out/ $PY -c $BENCHMARK -o $ARGUMENT
+time $OPT -d m5out/ $PY -c $BENCHMARK -o $ARGUMENT -I 10
