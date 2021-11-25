@@ -60,7 +60,7 @@ endif
 CXXFLAGS += $(MT) $(SZ) $(NCO) $(FUNC) $(ERR) $(CSRC)
 
 # Para ARM:
-CXX = arm-linux-gnueabi-cpp
+CXX = arm-linux-gnueabi-g++-7
 
 all: $(TARGET)
 
