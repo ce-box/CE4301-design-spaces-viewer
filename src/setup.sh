@@ -1,3 +1,3 @@
-export GEM5_DIR=/home/ealvarado/Documents/tec/ce4301-arquitectura-computadores/GEM5/gem5
-export PARSEC_BENCHMARK_DIR=/home/ealvarado/Documents/tec/ce4301-arquitectura-computadores/proyecto-03/benchmarks/parsec/blackscholes
-export SPEC_BENCHMARK_DIR=/home/ealvarado/Documents/tec/ce4301-arquitectura-computadores/proyecto-03/benchmarks/spec/458.sjeng
+export GEM5_DIR=/home/esteban/Documentos/GEM5/gem5
+export PARSEC_BENCHMARK_DIR=/home/esteban/Documentos/CE4301-design-spaces-viewer/benchmarks/parsec/blackscholes
+export SPEC_BENCHMARK_DIR=/home/esteban/Documentos/CE4301-design-spaces-viewer/benchmarks/spec/458.sjeng

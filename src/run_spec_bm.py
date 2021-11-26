@@ -73,7 +73,7 @@ def rename_stats_file(test, value):
     
     bm = BENCHMARK_DIR
     isa = config['isa']
-    out = config['output_dir']
+    out = 'm5out'#config['output_dir']
     cpu = config['cpu']
 
     # copy stats.txt
@@ -94,4 +94,4 @@ def run(isa):
 
 
 if __name__ == '__main__':
-    run('RISCV')
+    run('ARM')

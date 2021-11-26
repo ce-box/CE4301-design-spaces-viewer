@@ -11,7 +11,7 @@ config = {
 }
 
 
-def run_parsec_bm(cpu='TimingSimpleCPU', isa='ARM', max_instructions=100000):
+def run_parsec_bm(cpu='TimingSimpleCPU', isa='ARM', max_instructions=1000000):
 
     '''
     
@@ -25,7 +25,7 @@ def run_parsec_bm(cpu='TimingSimpleCPU', isa='ARM', max_instructions=100000):
     out = config['output_dir']
 
     benchmark = f'{bm}/{_isa}/src/blackscholes'
-    arg = f'1 {bm}/{_isa}/inputs/input_test/in_4.txt pruebas'
+    arg = f'{bm}/{_isa}/inputs/input_test/in_4.txt'
     base_command = f'sudo time {GEM5_DIR}/build/{isa}/gem5.opt -d {out} {GEM5_DIR}/configs/example/se.py -I {max_instructions} -c {benchmark} -o {arg} --cpu-type={cpu} --caches'
 
     run_default(base_command)
