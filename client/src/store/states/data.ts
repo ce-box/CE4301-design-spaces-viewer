@@ -4,13 +4,20 @@ export interface ModelData {
     systemCPUNumCycles: number,
     missRateSize: number,
     missRateAssoc: number,
-    brachPredBTBMissPct: number,
-    BTBHits: number,
+    btbMissPCT: number,
+    btbHits: number
+}
+
+export interface BTBData {
+    label: string,
+    btbMissPCT: number,
+    btbHits: number,
 }
 
 export class Data {
     constructor(
         public data: ModelData[] = [],
+        public dataBTB: BTBData[] = [],
         public error?: string,
         public isLoading: boolean = true
     ) { }

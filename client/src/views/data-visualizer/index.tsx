@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Component } from "react";
 import { connect } from "react-redux";
 import { Col, Row } from 'reactstrap';
+import BarChart from '../../components/bar-chart';
 import Chart from "../../components/chart";
 import Menu from '../../components/menu';
 import { Benchmark } from '../../shared/benchmarkTypes';
@@ -50,6 +51,29 @@ export class DataVisualizer extends Component<Props> {
         return (
             <Fragment>
                 <h1> Estadísticas </h1>
+                <Row>
+                    <Col>
+                        <div style={{ width: '100%', height: '82%' }}>
+                            <h3>
+                                <p>
+                                AVG Cycles: {
+                                    this.props.data.map(item => item.systemCPUNumCycles).reduce(function (avg, value, _, { length }) {
+                                        return avg + value / length;
+                                    }, 0).toLocaleString('en-us', { minimumFractionDigits: 2 })
+                                }</p>
+                                <p>
+                                BTB Miss PCT: {this.props.data[0] ? this.props.data[0].btbMissPCT : 0}
+                                </p>
+                                <p>
+                                BTB Hits: {this.props.data[0] ? this.props.data[0].btbHits : 0}
+                                </p>
+
+
+                            </h3>
+                        </div>
+
+                    </Col>
+                </Row>
                 <Row>
                     <Col>
                         <Menu
@@ -107,41 +131,29 @@ export class DataVisualizer extends Component<Props> {
 
                 <Row>
                     <Col>
-                        <Chart<{ name: string, btb: number }>
+                        <BarChart<{ name: string, btb: number }>
                             // l1cache.size & l1cache.assoc
                             // vs system.cpu.branchPred.BTBMissPct
                             title='% BTB Miss por Medición' // Barras
-                            data={this.props.data.map(item => {
+                            data={this.props.dataBTB.map(item => {
                                 return {
-                                    name: `${item.l1cacheSize}`,
-                                    btb: item.brachPredBTBMissPct
+                                    name: `${item.label}`,
+                                    btb: item.btbMissPCT
                                 }
                             })}
                         />
                     </Col>
-                    <Col>
-                        <h2 style={{ width: '100%', height: '18%', justifyContent: 'center', alignItems: 'center', textAlign: 'center', display: 'flex' }}>
-                            AVG Cycles
-                        </h2>
-                        <div style={{ width: '100%', height: '82%' }}>
-                            <h3>{
-                                this.props.data.map(item => item.systemCPUNumCycles).reduce(function (avg, value, _, { length }) {
-                                    return avg + value / length;
-                                }, 0).toLocaleString('en-us', {minimumFractionDigits: 2})
-                            }</h3>
-                        </div>
 
-                    </Col>
                     <Col>
-                        <Chart<{ name: string, hits: number }>
+                        <BarChart<{ name: string, hits: number }>
                             title='Cantidad de Aciertos y Desaciertos por Medición'
                             // l1cache.size & l1cache.assoc
                             // vs system.cpu.predictedBranches
                             // vs system.cpu.BranchMispred
-                            data={this.props.data.map(item => {
+                            data={this.props.dataBTB.map(item => {
                                 return {
-                                    name: `${item.l1cacheSize}`,
-                                    hits: item.BTBHits
+                                    name: item.label,
+                                    hits: item.btbHits
                                 }
                             })}
                         />
