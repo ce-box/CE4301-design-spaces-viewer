@@ -64,33 +64,33 @@ Estos benchmarks se seleccionaron por su alto uso de memoria, lo que nos permite
 
 ### Tabla 2. Combinaciones posibles para las micro-arquitecturas seleccionadas
 
-| #  | Benchmark | ISA   | Procesador   | BPU        | cache-assoc | cache-size |
-| -  | --------- | ---   | ----------   | ---        | ----------- | ---------- |
-| 1  | 401.bzip  | ARM   | TimingSimple | 2bit_local | ----------- | ---------- |
-| 2  | 401.bzip  | ARM   | TimingSimple | Bi_mode    | ----------- | ---------- |
-| 3  | 401.bzip  | ARM   | TimingSimple | Tournament | ----------- | ---------- |
-| 4  | 401.bzip  | ARM   | TraceCPU     | 2bit_local | ----------- | ---------- |
-| 5  | 401.bzip  | ARM   | TraceCPU     | Bi_mode    | ----------- | ---------- |
-| 6  | 401.bzip  | ARM   | TraceCPU     | Tournament | ----------- | ---------- |
-| 7  | 401.bzip  | RISCV | TimingSimple | 2bit_local | ----------- | ---------- |
-| 8  | 401.bzip  | RISCV | TimingSimple | Bi_mode    | ----------- | ---------- |
-| 9  | 401.bzip  | RISCV | TimingSimple | Tournament | ----------- | ---------- |
-| 10 | 401.bzip  | RISCV | TraceCPU     | 2bit_local | ----------- | ---------- |
-| 11 | 401.bzip  | RISCV | TraceCPU     | Bi_mode    | ----------- | ---------- |
-| 12 | 401.bzip  | RISCV | TraceCPU     | Tournament | ----------- | ---------- |
-| -- | --------- | ----- | ----------   | ---------- | ----------- | ---------- |
-| 13 | canneal   | ARM   | TimingSimple | 2bit_local | ----------- | ---------- |
-| 14 | canneal   | ARM   | TimingSimple | Bi_mode    | ----------- | ---------- |
-| 15 | canneal   | ARM   | TimingSimple | Tournament | ----------- | ---------- |
-| 16 | canneal   | ARM   | TraceCPU     | 2bit_local | ----------- | ---------- |
-| 17 | canneal   | ARM   | TraceCPU     | Bi_mode    | ----------- | ---------- |
-| 18 | canneal   | ARM   | TraceCPU     | Tournament | ----------- | ---------- |
-| 19 | canneal   | RISCV | TimingSimple | 2bit_local | ----------- | ---------- |
-| 20 | canneal   | RISCV | TimingSimple | Bi_mode    | ----------- | ---------- |
-| 21 | canneal   | RISCV | TimingSimple | Tournament | ----------- | ---------- |
-| 22 | canneal   | RISCV | TraceCPU     | 2bit_local | ----------- | ---------- |
-| 23 | canneal   | RISCV | TraceCPU     | Bi_mode    | ----------- | ---------- |
-| 24 | canneal   | RISCV | TraceCPU     | Tournament | ----------- | ---------- |
+| #  | Benchmark | ISA   | Procesador   | BPU        | cache-assoc     | cache-size      |
+| -  | --------- | ---   | ----------   | ---        | --------------- | --------------- |
+| 1  | 401.bzip  | ARM   | TimingSimple | 2bit_local | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 2  | 401.bzip  | ARM   | TimingSimple | Bi_mode    | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 3  | 401.bzip  | ARM   | TimingSimple | Tournament | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 4  | 401.bzip  | ARM   | TraceCPU     | 2bit_local | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 5  | 401.bzip  | ARM   | TraceCPU     | Bi_mode    | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 6  | 401.bzip  | ARM   | TraceCPU     | Tournament | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 7  | 401.bzip  | RISCV | TimingSimple | 2bit_local | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 8  | 401.bzip  | RISCV | TimingSimple | Bi_mode    | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 9  | 401.bzip  | RISCV | TimingSimple | Tournament | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 10 | 401.bzip  | RISCV | TraceCPU     | 2bit_local | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 11 | 401.bzip  | RISCV | TraceCPU     | Bi_mode    | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 12 | 401.bzip  | RISCV | TraceCPU     | Tournament | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| -- | --------- | ----- | ----------   | ---------- | --------------- | --------------- |
+| 13 | canneal   | ARM   | TimingSimple | 2bit_local | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 14 | canneal   | ARM   | TimingSimple | Bi_mode    | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 15 | canneal   | ARM   | TimingSimple | Tournament | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 16 | canneal   | ARM   | TraceCPU     | 2bit_local | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 17 | canneal   | ARM   | TraceCPU     | Bi_mode    | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 18 | canneal   | ARM   | TraceCPU     | Tournament | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 19 | canneal   | RISCV | TimingSimple | 2bit_local | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 20 | canneal   | RISCV | TimingSimple | Bi_mode    | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 21 | canneal   | RISCV | TimingSimple | Tournament | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 22 | canneal   | RISCV | TraceCPU     | 2bit_local | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 23 | canneal   | RISCV | TraceCPU     | Bi_mode    | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
+| 24 | canneal   | RISCV | TraceCPU     | Tournament | DM,2w,4w,8w,16w | 1k,2k,4k,8k,16k |
 
 ## Autores ✏️
 
