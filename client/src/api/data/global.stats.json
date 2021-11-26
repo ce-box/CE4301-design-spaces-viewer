@@ -1,0 +1,467 @@
+{
+    "config": {
+        "l1cacheSize": ["512","1k","2k","4k","8k"],
+        "l1cacheAssoc": ["DM","2-way","4-way","8-way","16-way"]
+    },
+    "bzip2": {
+        "arm": {
+            "timingSimpleCPU": {
+                "twoBitLocal": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "biMode": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "tournament": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                }
+            },
+            "traceCPU": {
+                "twoBitLocal": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "biMode": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "tournament": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                }
+            }
+        },
+        "riscV": {
+            "timingSimpleCPU": {
+                "twoBitLocal": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "biMode": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "tournament": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                }
+            },
+            "traceCPU": {
+                "twoBitLocal": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "biMode": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "tournament": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                }
+            }
+        }
+        
+    },
+    "canneals": {
+        "arm": {
+            "timingSimpleCPU": {
+                "twoBitLocal": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "biMode": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "tournament": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                }
+            },
+            "traceCPU": {
+                "twoBitLocal": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "biMode": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "tournament": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                }
+            }
+        },
+        "riscV": {
+            "timingSimpleCPU": {
+                "twoBitLocal": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "biMode": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "tournament": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                }
+            },
+            "traceCPU": {
+                "twoBitLocal": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "biMode": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                },
+                "tournament": {
+                    "stats":{
+                        "cpu": {
+                            "systemCPUNumCycles": [404913297.0, 0, 0, 0, 0]
+                        },
+                        "cache": {
+                            "missesCPUData": [423398, 0, 0, 0, 0],
+                            "missRateTotal": [0.007564, 0, 0, 0, 0],
+                            "missesCPUInst": [1080.0, 0, 0, 0, 0],
+                            "missRateCPUInst": [0.000008, 0, 0, 0, 0]
+                        },
+                        "branchPredictor": {
+                            "brachPredBTBMissPct": [0.492611, 0, 0, 0, 0],
+                            "predictedBranches": [210, 0, 0, 0, 0],
+                            "branchMissPred": [621, 0, 0, 0, 0]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
