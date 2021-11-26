@@ -12,17 +12,17 @@ export default function transformData(value: {
     bpu: BPUType
 }): ModelData[] {
     switch (value.benchmark) {
-        case BenchmarkType.BZIP:
+        case BenchmarkType.SJENG:
             return filterBenchmark({
-                data: value.data.bzip2,
+                data: value.data.sjeng,
                 presentationData: value.presentationData,
                 isa: value.isa,
                 cpu: value.cpu,
                 bpu: value.bpu
             });
-        case BenchmarkType.CANNEAL:
+        case BenchmarkType.BLACKSCHOLES:
             return filterBenchmark({
-                data: value.data.bzip2,
+                data: value.data.blackscholes,
                 presentationData: value.presentationData,
                 isa: value.isa,
                 cpu: value.cpu,
@@ -75,7 +75,7 @@ function filterISA(value: {
             });
         case CPUType.TRACE_CPU:
             return filterCPU({
-                data: value.data.traceCPU,
+                data: value.data.O3CPU,
                 presentationData: value.presentationData,
                 bpu: value.bpu
             });
@@ -92,12 +92,12 @@ function filterCPU(value: {
     switch (value.bpu) {
         case BPUType.TWO_BIT_LOCAL:
             return filterBPU({
-                data: value.data.twoBitLocal,
+                data: value.data.local,
                 presentationData: value.presentationData,
             });
         case BPUType.BI_MODE:
             return filterBPU({
-                data: value.data.biMode,
+                data: value.data.bi_mode,
                 presentationData: value.presentationData,
             });
         case BPUType.TOURNAMENT:
@@ -116,14 +116,11 @@ function filterBPU(value: {
 }): ModelData[] {
     const data = value.data.stats;
     return value.presentationData.map((item, index) => {
-        item.systemCPUNumCycles = data.cpu.systemCPUNumCycles[index];
-        item.missesCPUData = data.cache.missesCPUData[index];
-        item.missRateTotal = data.cache.missRateTotal[index];
-        item.missesCPUInst = data.cache.missesCPUInst[index];
-        item.missRateCPUInst = data.cache.missRateCPUInst[index];
-        item.brachPredBTBMissPct = data.branchPredictor.brachPredBTBMissPct[index];
-        item.predictedBranches = data.branchPredictor.predictedBranches[index];
-        item.branchMissPred = data.branchPredictor.branchMissPred[index];
+        item.systemCPUNumCycles = data.cpu.numCycles[index];
+        item.missRateSize = data.cache.missRateSize[index];
+        item.missRateAssoc = data.cache.missRateAssoc[index];
+        item.brachPredBTBMissPct = data.branchPredictor.BTBMissPct;
+        item.BTBHits = data.branchPredictor.BTBHits;
         return item;
     });
 }

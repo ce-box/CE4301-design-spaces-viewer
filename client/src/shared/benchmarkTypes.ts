@@ -1,4 +1,4 @@
 export enum Benchmark {
-    BZIP = '401.bzip',
-    CANNEAL = 'canneal'
+    SJENG = '458.sjeng',
+    BLACKSCHOLES = 'blackshcoles'
 }

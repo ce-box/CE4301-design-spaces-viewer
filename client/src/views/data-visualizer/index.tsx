@@ -19,7 +19,7 @@ export class DataVisualizer extends Component<Props> {
     }
 
     selectedValues = {
-        benchmark: Benchmark.BZIP,
+        benchmark: Benchmark.SJENG,
         isa: ISA.ARM,
         cpu: CPU.TIMING_SIMPLE,
         bpu: BPU.BI_MODE
@@ -68,7 +68,7 @@ export class DataVisualizer extends Component<Props> {
                             title='Ciclos por Medición' //BARRAS
                             data={this.props.data.map(item => {
                                 return {
-                                    name: `${item.l1cacheSize} ${item.l1cacheAssoc}`,
+                                    name: `${item.l1cacheSize}`,
                                     cycle: item.systemCPUNumCycles
                                 }
                             })}
@@ -83,7 +83,7 @@ export class DataVisualizer extends Component<Props> {
                             data={this.props.data.map(item => {
                                 return {
                                     name: item.l1cacheAssoc,
-                                    misses: item.missesCPUData,
+                                    misses: item.missRateAssoc,
                                     //cpuInst: item.missesCPUInst
                                 }
                             })}
@@ -98,7 +98,7 @@ export class DataVisualizer extends Component<Props> {
                             data={this.props.data.map(item => {
                                 return {
                                     name: item.l1cacheSize,
-                                    misses: item.missRateTotal,
+                                    misses: item.missRateSize,
                                 }
                             })}
                         />
@@ -113,7 +113,7 @@ export class DataVisualizer extends Component<Props> {
                             title='% BTB Miss por Medición' // Barras
                             data={this.props.data.map(item => {
                                 return {
-                                    name: `${item.l1cacheSize} ${item.l1cacheAssoc}`,
+                                    name: `${item.l1cacheSize}`,
                                     btb: item.brachPredBTBMissPct
                                 }
                             })}
@@ -133,16 +133,15 @@ export class DataVisualizer extends Component<Props> {
 
                     </Col>
                     <Col>
-                        <Chart<{ name: string, branchPrediction: number, missPrediction: number }>
+                        <Chart<{ name: string, hits: number }>
                             title='Cantidad de Aciertos y Desaciertos por Medición'
                             // l1cache.size & l1cache.assoc
                             // vs system.cpu.predictedBranches
                             // vs system.cpu.BranchMispred
                             data={this.props.data.map(item => {
                                 return {
-                                    name: `${item.l1cacheSize} ${item.l1cacheAssoc}`,
-                                    branchPrediction: item.predictedBranches,
-                                    missPrediction: item.branchMissPred
+                                    name: `${item.l1cacheSize}`,
+                                    hits: item.BTBHits
                                 }
                             })}
                         />

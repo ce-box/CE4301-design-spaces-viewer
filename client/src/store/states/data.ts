@@ -2,13 +2,10 @@ export interface ModelData {
     l1cacheSize: string,
     l1cacheAssoc: string,
     systemCPUNumCycles: number,
-    missesCPUData: number,
-    missRateTotal: number,
-    missesCPUInst: number,
-    missRateCPUInst: number,
+    missRateSize: number,
+    missRateAssoc: number,
     brachPredBTBMissPct: number,
-    predictedBranches: number,
-    branchMissPred: number
+    BTBHits: number,
 }
 
 export class Data {

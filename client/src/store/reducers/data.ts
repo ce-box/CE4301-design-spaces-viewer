@@ -23,13 +23,10 @@ const Reducer: ReduxReducer<Data, Action> = (
                     l1cacheSize: data.config.l1cacheSize[i],
                     l1cacheAssoc: data.config.l1cacheAssoc[i],
                     systemCPUNumCycles: 0,
-                    missesCPUData: 0,
-                    missRateTotal: 0,
-                    missesCPUInst: 0,
-                    missRateCPUInst: 0,
+                    missRateSize: 0,
+                    missRateAssoc: 0,
                     brachPredBTBMissPct: 0,
-                    predictedBranches: 0,
-                    branchMissPred: 0,
+                    BTBHits: 0
                 })
             }
             presentationData = transformData({
