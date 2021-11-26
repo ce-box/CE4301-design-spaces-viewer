@@ -3,7 +3,7 @@ import { Reducer as ReduxReducer } from 'redux';
 import { DataActionType as ActionType } from '../action-types/';
 import { DataAction as Action } from '../actions';
 import { Data } from '../states';
-import transformData from './helper';
+import { btbTransform, transformData } from './helper';
 
 
 const initialState: Data = new Data();
@@ -23,13 +23,10 @@ const Reducer: ReduxReducer<Data, Action> = (
                     l1cacheSize: data.config.l1cacheSize[i],
                     l1cacheAssoc: data.config.l1cacheAssoc[i],
                     systemCPUNumCycles: 0,
-                    missesCPUData: 0,
-                    missRateTotal: 0,
-                    missesCPUInst: 0,
-                    missRateCPUInst: 0,
-                    brachPredBTBMissPct: 0,
-                    predictedBranches: 0,
-                    branchMissPred: 0,
+                    missRateSize: 0,
+                    missRateAssoc: 0,
+                    btbMissPCT: 0,
+                    btbHits: 0
                 })
             }
             presentationData = transformData({
@@ -41,14 +38,18 @@ const Reducer: ReduxReducer<Data, Action> = (
                 bpu: action.selectedValues.bpu,
             })
 
+            const btbData = btbTransform(data);
+
             return {
                 isLoading: false,
-                data: presentationData
+                data: presentationData,
+                dataBTB: btbData
             }
         case ActionType.REQUEST:
             return {
                 data: state.data,
                 isLoading: true,
+                dataBTB: state.dataBTB
             }
         case ActionType.FAILURE:
             const error: any = action.error;

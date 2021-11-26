@@ -1,9 +1,9 @@
 import { Benchmark as BenchmarkType, ISA as ISAType, CPU as CPUType, BPU as BPUType } from "../../shared";
-import { ModelData } from "../states/data";
+import { BTBData, ModelData } from "../states/data";
 import { Data } from '../../api/models';
 import { Benchmark, ISA, CPU, BPU } from "../../api/models/data";
 
-export default function transformData(value: {
+export function transformData(value: {
     data: Data,
     presentationData: ModelData[],
     benchmark: BenchmarkType,
@@ -12,17 +12,17 @@ export default function transformData(value: {
     bpu: BPUType
 }): ModelData[] {
     switch (value.benchmark) {
-        case BenchmarkType.BZIP:
+        case BenchmarkType.SJENG:
             return filterBenchmark({
-                data: value.data.bzip2,
+                data: value.data.sjeng,
                 presentationData: value.presentationData,
                 isa: value.isa,
                 cpu: value.cpu,
                 bpu: value.bpu
             });
-        case BenchmarkType.CANNEAL:
+        case BenchmarkType.BLACKSCHOLES:
             return filterBenchmark({
-                data: value.data.bzip2,
+                data: value.data.blackscholes,
                 presentationData: value.presentationData,
                 isa: value.isa,
                 cpu: value.cpu,
@@ -75,7 +75,7 @@ function filterISA(value: {
             });
         case CPUType.TRACE_CPU:
             return filterCPU({
-                data: value.data.traceCPU,
+                data: value.data.O3CPU,
                 presentationData: value.presentationData,
                 bpu: value.bpu
             });
@@ -92,12 +92,12 @@ function filterCPU(value: {
     switch (value.bpu) {
         case BPUType.TWO_BIT_LOCAL:
             return filterBPU({
-                data: value.data.twoBitLocal,
+                data: value.data.local,
                 presentationData: value.presentationData,
             });
         case BPUType.BI_MODE:
             return filterBPU({
-                data: value.data.biMode,
+                data: value.data.bi_mode,
                 presentationData: value.presentationData,
             });
         case BPUType.TOURNAMENT:
@@ -116,14 +116,137 @@ function filterBPU(value: {
 }): ModelData[] {
     const data = value.data.stats;
     return value.presentationData.map((item, index) => {
-        item.systemCPUNumCycles = data.cpu.systemCPUNumCycles[index];
-        item.missesCPUData = data.cache.missesCPUData[index];
-        item.missRateTotal = data.cache.missRateTotal[index];
-        item.missesCPUInst = data.cache.missesCPUInst[index];
-        item.missRateCPUInst = data.cache.missRateCPUInst[index];
-        item.brachPredBTBMissPct = data.branchPredictor.brachPredBTBMissPct[index];
-        item.predictedBranches = data.branchPredictor.predictedBranches[index];
-        item.branchMissPred = data.branchPredictor.branchMissPred[index];
+        item.systemCPUNumCycles = data.cpu.numCycles[index];
+        item.missRateSize = data.cache.missRateSize[index];
+        item.missRateAssoc = data.cache.missRateAssoc[index];
+        item.btbMissPCT = data.branchPredictor.BTBMissPct;
+        item.btbHits = data.branchPredictor.BTBHits;
+        
         return item;
     });
+}
+
+export function btbTransform(data: Data): BTBData[] {
+    return [
+        {
+            label: 'sg.a.ts.t',
+            btbMissPCT: data.sjeng.arm.timingSimpleCPU.tournament.stats.branchPredictor.BTBMissPct,
+            btbHits: data.sjeng.arm.timingSimpleCPU.tournament.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'sg.a.ts.l',
+            btbMissPCT: data.sjeng.arm.timingSimpleCPU.local.stats.branchPredictor.BTBMissPct,
+            btbHits: data.sjeng.arm.timingSimpleCPU.local.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'sg.a.ts.b',
+            btbMissPCT: data.sjeng.arm.timingSimpleCPU.bi_mode.stats.branchPredictor.BTBMissPct,
+            btbHits: data.sjeng.arm.timingSimpleCPU.bi_mode.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'sg.a.o3.t',
+            btbMissPCT: data.sjeng.arm.O3CPU.tournament.stats.branchPredictor.BTBMissPct,
+            btbHits: data.sjeng.arm.O3CPU.tournament.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'sg.a.o3.l',
+            btbMissPCT: data.sjeng.arm.O3CPU.local.stats.branchPredictor.BTBMissPct,
+            btbHits: data.sjeng.arm.O3CPU.local.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'sg.a.o3.b',
+            btbMissPCT: data.sjeng.arm.O3CPU.bi_mode.stats.branchPredictor.BTBMissPct,
+            btbHits: data.sjeng.arm.O3CPU.bi_mode.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'sg.r.ts.t',
+            btbMissPCT: data.sjeng.riscV.timingSimpleCPU.tournament.stats.branchPredictor.BTBMissPct,
+            btbHits: data.sjeng.riscV.timingSimpleCPU.tournament.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'sg.r.ts.l',
+            btbMissPCT: data.sjeng.riscV.timingSimpleCPU.local.stats.branchPredictor.BTBMissPct,
+            btbHits: data.sjeng.riscV.timingSimpleCPU.local.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'sg.r.ts.b',
+            btbMissPCT: data.sjeng.riscV.timingSimpleCPU.bi_mode.stats.branchPredictor.BTBMissPct,
+            btbHits: data.sjeng.riscV.timingSimpleCPU.bi_mode.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'sg.r.o3.t',
+            btbMissPCT: data.sjeng.riscV.O3CPU.tournament.stats.branchPredictor.BTBMissPct,
+            btbHits: data.sjeng.riscV.O3CPU.tournament.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'sg.r.o3.l',
+            btbMissPCT: data.sjeng.riscV.O3CPU.local.stats.branchPredictor.BTBMissPct,
+            btbHits: data.sjeng.riscV.O3CPU.local.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'sg.r.o3.b',
+            btbMissPCT: data.sjeng.riscV.O3CPU.bi_mode.stats.branchPredictor.BTBMissPct,
+            btbHits: data.sjeng.riscV.O3CPU.bi_mode.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'bc.a.ts.t',
+            btbMissPCT: data.blackscholes.arm.timingSimpleCPU.tournament.stats.branchPredictor.BTBMissPct,
+            btbHits: data.blackscholes.arm.timingSimpleCPU.tournament.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'bc.a.ts.l',
+            btbMissPCT: data.blackscholes.arm.timingSimpleCPU.local.stats.branchPredictor.BTBMissPct,
+            btbHits: data.blackscholes.arm.timingSimpleCPU.local.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'bc.a.ts.b',
+            btbMissPCT: data.blackscholes.arm.timingSimpleCPU.bi_mode.stats.branchPredictor.BTBMissPct,
+            btbHits: data.blackscholes.arm.timingSimpleCPU.bi_mode.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'bc.a.o3.t',
+            btbMissPCT: data.blackscholes.arm.O3CPU.tournament.stats.branchPredictor.BTBMissPct,
+            btbHits: data.blackscholes.arm.O3CPU.tournament.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'bc.a.o3.l',
+            btbMissPCT: data.blackscholes.arm.O3CPU.local.stats.branchPredictor.BTBMissPct,
+            btbHits: data.blackscholes.arm.O3CPU.local.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'bc.a.o3.b',
+            btbMissPCT: data.blackscholes.arm.O3CPU.bi_mode.stats.branchPredictor.BTBMissPct,
+            btbHits: data.blackscholes.arm.O3CPU.bi_mode.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'bc.r.ts.t',
+            btbMissPCT: data.blackscholes.riscV.timingSimpleCPU.tournament.stats.branchPredictor.BTBMissPct,
+            btbHits: data.blackscholes.riscV.timingSimpleCPU.tournament.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'bc.r.ts.l',
+            btbMissPCT: data.blackscholes.riscV.timingSimpleCPU.local.stats.branchPredictor.BTBMissPct,
+            btbHits: data.blackscholes.riscV.timingSimpleCPU.local.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'bc.r.ts.b',
+            btbMissPCT: data.blackscholes.riscV.timingSimpleCPU.bi_mode.stats.branchPredictor.BTBMissPct,
+            btbHits: data.blackscholes.riscV.timingSimpleCPU.bi_mode.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'bc.r.o3.t',
+            btbMissPCT: data.blackscholes.riscV.O3CPU.tournament.stats.branchPredictor.BTBMissPct,
+            btbHits: data.blackscholes.riscV.O3CPU.tournament.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'bc.r.o3.l',
+            btbMissPCT: data.blackscholes.riscV.O3CPU.local.stats.branchPredictor.BTBMissPct,
+            btbHits: data.blackscholes.riscV.O3CPU.local.stats.branchPredictor.BTBHits,
+        },
+        {
+            label: 'bc.r.o3.b',
+            btbMissPCT: data.blackscholes.riscV.O3CPU.bi_mode.stats.branchPredictor.BTBMissPct,
+            btbHits: data.blackscholes.riscV.O3CPU.bi_mode.stats.branchPredictor.BTBHits,
+        }
+    ];
 }

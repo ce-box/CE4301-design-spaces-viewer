@@ -1,18 +1,15 @@
 export interface CPUStats {
-    systemCPUNumCycles: number[]
+    numCycles: number[]
 }
 
 export interface CacheStats {
-    missesCPUData: number[],
-    missRateTotal: number[],
-    missesCPUInst: number[],
-    missRateCPUInst: number[]
+    missRateSize: number[],
+    missRateAssoc: number[],
 }
 
 export interface BranchPredictorStats {
-    brachPredBTBMissPct: number[],
-    predictedBranches: number[],
-    branchMissPred: number[]
+    BTBMissPct: number,
+    BTBHits: number,
 }
 
 export interface Stats {
@@ -26,14 +23,14 @@ export interface BPU {
 }
 
 export interface CPU {
-    twoBitLocal: BPU
-    biMode: BPU
+    local: BPU
+    bi_mode: BPU
     tournament: BPU
 }
 
 export interface ISA {
     timingSimpleCPU: CPU,
-    traceCPU: CPU
+    O3CPU: CPU
 }
 
 export interface Benchmark {
@@ -49,7 +46,7 @@ export interface Config {
 export class Data {
     constructor(
         public config: Config,
-        public bzip2: Benchmark,
-        public canneals: Benchmark
+        public sjeng: Benchmark,
+        public blackscholes: Benchmark
     ) { }
 }
